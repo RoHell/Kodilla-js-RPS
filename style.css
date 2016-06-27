@@ -38,7 +38,7 @@ body {
 .menu ul li {
 	display: inline-block;
 	height: 50px;
-	min-width: 100px;
+	min-width: 75px;
 	text-align: center;
 }
 
@@ -67,6 +67,27 @@ body {
 	font-size: 18px;
 }
 
+.pick-button {
+	visibility: hidden;
+}
+
 .footer {
 	text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+	.header, .footer, .content {
+		width: 100%;
+	}
+
+	.menu ul li {
+		min-width: 50px;
+		font-size: 1.4rem;		
+	}
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+	.header, .footer, .content {
+		width: 80%;
+	}
 }

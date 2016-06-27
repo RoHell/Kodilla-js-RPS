@@ -4,8 +4,8 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>JS</title>
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-		<link rel="stylesheet" href="style.css">		
+		<link rel="stylesheet" href="style.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">	
 	</head>
 	<body>
 		<div class="header">
@@ -24,7 +24,7 @@
 			<h1 id="welcomeText">Java Script</h1>
 			<p>Let's play Rock Scissors Paper</p>
 
-			<button class="btn btn-succes">New Game</button>
+			<button class="btn btn-succes" onClick="newGame()">New Game</button>
 
 			<button class="btn btn-default pick-button" onclick="playerPick('rock')">
 				Rock <i class="fa fa-hand-rock-o" aria-hidden="true"></i>
@@ -37,11 +37,6 @@
 			<button class="btn btn-default pick-button" onclick="playerPick('scissors')">
 				Scissors <i class="fa fa-hand-scissors-o" aria-hidden="true"></i>
 			</button>
-
-			<h3>Current round</h3><br>
-  			Computer picked <span id="computerPick"></span><br>
-  			Player picked <span id="playerPick"></span><br>
-  			Result: <span id="gameResult"></span>
 
   			<table class="table table-bordered table-striped">
   				<thead>
@@ -64,12 +59,20 @@
 
 		<p id="roundResult"></p>
 
+		<div class="score">
+  			<p><h2>Current round:</h2><br>
+  			computer chose: <span id="computerPick"></span> <br>
+  			player chose: <span id="playerPick"></span> <br>
+  			result: <span id="gameResult"></span>
+  			</p>
 		</div>
+		</div>
+
 		<div class="footer">
 			Copyright &copy; RoHell | 2016
 		</div>
 		
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 		<script src="script.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</body>
 </html>
