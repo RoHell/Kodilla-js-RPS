@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>JS</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">	
 	</head>
@@ -24,7 +25,7 @@
 			<h1 id="welcomeText">Java Script</h1>
 			<p>Let's play Rock Scissors Paper</p>
 
-			<button class="btn btn-succes" onClick="newGame()">New Game</button>
+			<button class="btn btn-succes" onClick="newGame()">New Game</button><br><br>
 
 			<button class="btn btn-default pick-button" onclick="playerPick('rock')">
 				Rock <i class="fa fa-hand-rock-o" aria-hidden="true"></i>
@@ -48,24 +49,23 @@
       					<th>Computer</th>
     				</tr>
     			</thead>
-  			</thead>
-  			<tbody>
-  				<tr>
-    				<td id="playerScore">0</td>
-    				<td id="computerScore">0</td>
-  				</tr>
-  			</tbody>
-		</table>
+  				<tbody>
+	  				<tr>
+	    				<td id="playerScore">0</td>
+	    				<td id="computerScore">0</td>
+	  				</tr>
+  				</tbody>
+			</table>
 
-		<p id="roundResult"></p>
+			<p id="roundResult"></p>
 
-		<div class="score">
-  			<p><h2>Current round:</h2><br>
-  			computer chose: <span id="computerPick"></span> <br>
-  			player chose: <span id="playerPick"></span> <br>
-  			result: <span id="gameResult"></span>
-  			</p>
-		</div>
+			<div class="score">
+	  			<p><h2>Current round:</h2><br>
+	  			computer chose: <span id="computerPick"></span> <br>
+	  			<span id="playerNameIs"></span> chose: <span id="playerPick"></span> <br>
+	  			result: <span id="gameResult"></span>
+	  			</p>
+			</div>
 		</div>
 
 		<div class="footer">
@@ -73,6 +73,7 @@
 		</div>
 		
 		<script src="script.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	</body>
 </html>
