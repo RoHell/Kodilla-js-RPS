@@ -1,19 +1,6 @@
-// ==== Player name ====
-var question = prompt('Type Your Name, Plese');
-var welcomeText = document.getElementById('welcomeText');
-// Title
-if (question === null) {	
-	welcomeText.innerHTML = 'Hello My Dear Guest';
-}
-else {
-	welcomeText.innerHTML = 'Hello My Dear ' + question;	
-}
-// Table
-document.getElementById("playerName").innerHTML = question;
-
-// === Game ====
+// === Main variables ====
 var player = {
-	name: question,
+	name: "",
 	score: 0,
 	pick: ""
 };
@@ -26,22 +13,36 @@ var computer = {
 
 var round = 0;
 
-// Reset
-computer.score = 0;
-computer.pick = "";
-player.score = 0;
-player.pick = "";
-round = 0;
-
-// Hidden buttons, visible after 'newGame' button click
+// ==== New Game =====
 function newGame() {
+	// Reset
+	computer.score = 0;
+	computer.pick = "";
+	player.score = 0;
+	player.pick = "";
+	round = 1;
+
+	// Player name
+	player.name = prompt("Type Your Name, Plese", "Guest");
+	welcomeText = document.getElementById("welcomeText");
+	welcomeText.innerHTML = "Hello My Dear " + player.name;
+	document.getElementById("playerName").innerHTML = player.name;
+
+	// Hidden buttons, visible after 'newGame' button click
 	var buttons = document.getElementsByClassName("pick-button");
 	for (var i = 0; i < buttons.length; i++) {
 		buttons[i].style.visibility = "visible";
 	}
-}
+};
 
-// Computer pick, random number between 0 and 3
+// ==== Player pick ====
+function playerPick(pick) {
+	player.pick = pick; //save player's pick
+	computerPick(); //choose computer's pick
+	checkResult(); //check result  
+};
+
+// ==== Computer pick ====
 function computerPick() {
 	switch (Math.floor(Math.random()*3)) {
 		case 0:
@@ -54,11 +55,11 @@ function computerPick() {
 			computer.pick = "scissors";
 		break;
 	}
-}
+};
 
-var gameResult;
-// Check the results
+// ==== Check the results ====
 function checkResult() {
+	var gameResult;
 	if (player.pick === computer.pick) {	//Check if there is a tie
 		gameResult = "tie!";
 	}
@@ -92,36 +93,33 @@ function checkResult() {
 			gameResult = "Computer wins!";
 		}
 	}
+	document.getElementById("playerScore").innerHTML = player.score;
+	document.getElementById("computerScore").innerHTML = computer.score;
+	document.getElementById("computerPick").innerHTML = computer.pick;
+	document.getElementById("playerPick").innerHTML = player.pick;
+	document.getElementById("gameResult").innerHTML = gameResult;
+	document.getElementById("gameRound").innerHTML = round;
+		
+	round++;
 
-document.getElementById("playerScore").innerHTML = player.score;
-document.getElementById("computerScore").innerHTML = computer.score;
-document.getElementById("computerPick").innerHTML = computer.pick;
-document.getElementById("playerPick").innerHTML = player.pick;
-document.getElementById("gameResult").innerHTML = gameResult;
-}
+	// Current round player name
+	document.getElementById("playerNameIs").innerHTML = player.name;
 
-// Current round player name
-document.getElementById("playerNameIs").innerHTML = player.name;
 
-function playerPick(pick) {
-	player.pick = pick; //save player's pick
-	computerPick(); //choose computer's pick
-	checkResult(); //check result  
-}
+	// Score
+	if ((player.score >= 10) || (computer.score >=10)) {
+		//log the result
+		if (player.score > computer.score) {
+			document.getElementById("roundResult").innerHTML = player.name + " wins the game!";
+		}
+		else {
+			document.getElementById("roundResult").innerHTML = "computer wins the game!";
+		}
 
-// Score
-if ((player.score >= 10) || (computer.score >=10)) {
-	//log the result
-	if (player.score > computer.score) {
-		document.getElementById("roundResult").innerHTML = "player wins the game!";
+		//hide buttons
+		var buttons = document.getElementsByClassName("pick-button");
+		for (var i = 0; i < buttons.length; i++) {
+			buttons[i].style.visibility = "hidden";
+		}
 	}
-	else {
-		document.getElementById("roundResult").innerHTML = "computer wins the game!";
-	}
-}
-
-//hide buttons
-var buttons = document.getElementsByClassName("pick-button");
-for (var i = 0; i < buttons.length; i++) {
-	buttons[i].style.visibility = 'hidden';
-}
+};

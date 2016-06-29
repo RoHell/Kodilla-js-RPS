@@ -10,20 +10,48 @@
 	</head>
 	<body>
 		<div class="header">
-			<div class="menu">
-				<div class="logo">
-					<a href="#" id="logo">LOGO</a>
-				</div>
-				<ul>
-					<li><a href="#">About Us</a></li>
-					<li><a href="#">Offer</a></li>
-					<li><a href="#">Contact</a></li>
-				</ul>
-			</div>
+			<nav class="navbar navbar-inverse">
+				<div class="container-fluid">
+		    <!-- Brand and toggle get grouped for better mobile display -->
+		    		<div class="navbar-header">
+		      			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+					        <span class="sr-only">Toggle navigation</span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+					        <span class="icon-bar"></span>
+		      			</button>
+		    			<a class="navbar-brand" href="#">Brand</a>
+		    		</div>
+
+		    <!-- Collect the nav links, forms, and other content for toggling -->
+		    		<div class="collapse navbar-collapse navbar-right" id="bs-example-navbar-collapse-1">
+		    			
+						<form class="navbar-form navbar-right" role="search">
+		        			<div class="form-group">
+		          				<input type="text" class="form-control" placeholder="Search">
+		        			</div>
+		        			<button type="submit" class="btn btn-default">Submit</button>
+		      			</form>
+
+		    			<ul class="nav navbar-nav">
+		        			<li><a href="#">About Us</a></li>
+		        			<li class="dropdown">
+		          				<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Games<span class="caret"></span></a>
+			          			<ul class="dropdown-menu">
+			            			<li><a href="#">Action</a></li>
+			            			<li><a href="#">Platform</a></li>
+			            			<li><a href="#">Cards</a></li>
+			            			<li><a href="#">Classic</a></li>
+			          			</ul>
+		        			</li>
+		      			</ul>
+		    		</div>
+		  		</div>
+			</nav>
 		</div>
 		<div class="content">
-			<h1 id="welcomeText">Java Script</h1>
-			<p>Let's play Rock Scissors Paper</p>
+			<h1 id="welcomeText">Let's Play</h1>
+			<p>Rock Scissors Paper</p>
 
 			<button class="btn btn-succes" onClick="newGame()">New Game</button><br><br>
 
@@ -38,30 +66,34 @@
 			<button class="btn btn-default pick-button" onclick="playerPick('scissors')">
 				Scissors <i class="fa fa-hand-scissors-o" aria-hidden="true"></i>
 			</button>
-
-  			<table class="table table-bordered table-striped">
-  				<thead>
-    				<tr>
-      					<th colspan="2" class="text-center">Game results</th>
-    				</tr>
-    				<tr>
-      					<th id="playerName">Player</th>
-      					<th>Computer</th>
-    				</tr>
-    			</thead>
-  				<tbody>
-	  				<tr>
-	    				<td id="playerScore">0</td>
-	    				<td id="computerScore">0</td>
-	  				</tr>
-  				</tbody>
-			</table>
-
+		<div class="container">
+			<div class="row">
+				<div class="col-md-offset-4 col-md-4">
+		  			<table class="table table-bordered table-striped">
+		  				<thead>
+		    				<tr>
+		      					<th colspan="2" class="text-center">Game results</th>
+		    				</tr>
+		    				<tr>
+		      					<th id="playerName">Player</th>
+		      					<th>Computer</th>
+		    				</tr>
+		    			</thead>
+		  				<tbody>
+			  				<tr>
+			    				<td id="playerScore">0</td>
+			    				<td id="computerScore">0</td>
+			  				</tr>
+		  				</tbody>
+					</table>
+				</div>	
+			</div>	
+		</div>
 			<p id="roundResult"></p>
 
 			<div class="score">
-	  			<p><h2>Current round:</h2><br>
-	  			computer chose: <span id="computerPick"></span> <br>
+	  			<p><h2>Current round: <span id="gameRound"></span></h2><br>
+	  			Computer chose: <span id="computerPick"></span> <br>
 	  			<span id="playerNameIs"></span> chose: <span id="playerPick"></span> <br>
 	  			result: <span id="gameResult"></span>
 	  			</p>
@@ -69,9 +101,13 @@
 		</div>
 
 		<div class="footer">
-			Copyright &copy; RoHell | 2016
+			<nav class="navbar navbar-inverse navbar-fixed-bottom">
+	  			<div class="container">
+	    			Copyright &copy; RoHell | 2016
+	  			</div>
+			</nav>
 		</div>
-		
+
 		<script src="script.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
