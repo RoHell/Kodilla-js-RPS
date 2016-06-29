@@ -13,20 +13,34 @@ var computer = {
 
 var round = 0;
 
+// ==== Pick Player Name ====
+function pickName () {	
+	player.name = prompt("Type Your Name, Plese", "Guest");
+	welcomeText = document.getElementById("welcomeText");
+
+	if (player.name === null) {
+		welcomeText.innerHTML = "Hello Anonymous";
+		player.name = 'Anonymous';
+	}
+	else {
+		// Player name
+		welcomeText.innerHTML = "Hello My Dear " + player.name;
+		document.getElementById("playerName").innerHTML = player.name;
+	}
+};
+
 // ==== New Game =====
 function newGame() {
+	
+	// Pick Player Name
+	pickName();
+
 	// Reset
 	computer.score = 0;
 	computer.pick = "";
 	player.score = 0;
 	player.pick = "";
 	round = 1;
-
-	// Player name
-	player.name = prompt("Type Your Name, Plese", "Guest");
-	welcomeText = document.getElementById("welcomeText");
-	welcomeText.innerHTML = "Hello My Dear " + player.name;
-	document.getElementById("playerName").innerHTML = player.name;
 
 	// Hidden buttons, visible after 'newGame' button click
 	var buttons = document.getElementsByClassName("pick-button");
