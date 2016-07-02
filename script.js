@@ -71,8 +71,8 @@ function computerPick() {
 	}
 };
 
-// ==== Check the results ====
-function checkResult() {
+// ==== Check round results ====
+function checkRoundResult() {
 	var gameResult;
 	if (player.pick === computer.pick) {	//Check if there is a tie
 		gameResult = "tie!";
@@ -97,7 +97,7 @@ function checkResult() {
 			gameResult = "Computer wins!";
 		}
 	}
-	else if (player.pick === "scissors") {	//if player chooses scissors
+	else {	//if player chooses scissors
 		if  (computer.pick === "paper") {
 			player.score++;
 			gameResult = player.name + " wins!";
@@ -118,16 +118,18 @@ function checkResult() {
 
 	// Current round player name
 	document.getElementById("playerNameIs").innerHTML = player.name;
+};
 
-
-	// Score
+// ==== Check game result ====
+function checkGameResult () {	
 	if ((player.score >= 10) || (computer.score >=10)) {
+		var rounResultField = document.getElementById("roundResult").innerHTML;
 		//log the result
 		if (player.score > computer.score) {
-			document.getElementById("roundResult").innerHTML = player.name + " wins the game!";
+			rounResultField = player.name + " wins the game!";
 		}
 		else {
-			document.getElementById("roundResult").innerHTML = "computer wins the game!";
+			rounResultField = "computer wins the game!";
 		}
 
 		//hide buttons
@@ -136,4 +138,10 @@ function checkResult() {
 			buttons[i].style.visibility = "hidden";
 		}
 	}
+};
+
+// ==== check final result ====
+function checkResult() {
+	checkRoundResult();
+	checkGameResult();
 };
