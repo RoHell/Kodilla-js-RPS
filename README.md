@@ -1,7 +1,7 @@
 # Rock Scissors Paper
 Play with computer in poplar game.
 
-[!Rock Scissors Paper](http://i.imgur.com/DjNBKrJ.png?1)
+![Rock Scissors Paper](http://i.imgur.com/DjNBKrJ.png?1)
 
 ## Installation
 1. Clone the repo: `git clone https://github.com/RoHell/RSP.git`
