@@ -1,0 +1,29 @@
+{
+  "name": "rohell",
+  "version": "1.0.0",
+  "description": "Rock Scissors Paper",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RoHell/Kodilla-js-RPS.git"
+  },
+  "keywords": [
+    "game",
+    "rsp"
+  ],
+  "author": "RoHell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RoHell/Kodilla-js-RPS/issues"
+  },
+  "homepage": "https://github.com/RoHell/Kodilla-js-RPS#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}

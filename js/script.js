@@ -29,7 +29,7 @@ function pickName () {
 	}
 };
 
-// ==== New Game =====
+// ==== New Game ====
 function newGame() {
 	
 	// Pick Player Name
@@ -71,8 +71,8 @@ function computerPick() {
 	}
 };
 
-// ==== Check round results ====
-function checkRoundResult() {
+// ==== Check the results ====
+function checkResult() {
 	var gameResult;
 	if (player.pick === computer.pick) {	//Check if there is a tie
 		gameResult = "tie!";
@@ -97,7 +97,7 @@ function checkRoundResult() {
 			gameResult = "Computer wins!";
 		}
 	}
-	else {	//if player chooses scissors
+	else if (player.pick === "scissors") {	//if player chooses scissors
 		if  (computer.pick === "paper") {
 			player.score++;
 			gameResult = player.name + " wins!";
@@ -118,18 +118,16 @@ function checkRoundResult() {
 
 	// Current round player name
 	document.getElementById("playerNameIs").innerHTML = player.name;
-};
 
-// ==== Check game result ====
-function checkGameResult () {	
+
+	// Score
 	if ((player.score >= 10) || (computer.score >=10)) {
-		var rounResultField = document.getElementById("roundResult").innerHTML;
 		//log the result
 		if (player.score > computer.score) {
-			rounResultField = player.name + " wins the game!";
+			document.getElementById("roundResult").innerHTML = player.name + " wins the game!";
 		}
 		else {
-			rounResultField = "computer wins the game!";
+			document.getElementById("roundResult").innerHTML = "computer wins the game!";
 		}
 
 		//hide buttons
@@ -138,10 +136,4 @@ function checkGameResult () {
 			buttons[i].style.visibility = "hidden";
 		}
 	}
-};
-
-// ==== check final result ====
-function checkResult() {
-	checkRoundResult();
-	checkGameResult();
 };
