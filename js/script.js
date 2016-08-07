@@ -29,7 +29,7 @@ function pickName () {
 	}
 };
 
-// ==== New Game =====
+// ==== New Game ====
 function newGame() {
 	
 	// Pick Player Name
